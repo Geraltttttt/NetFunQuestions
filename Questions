@@ -9,8 +9,10 @@ Week 1. Review Questions
   SECTION 1.2
     R4. List four access technologies. Classify each one as home access, enterprise access, or 
     wide-area wireless access.
+    -- Digital Subscriber Line (DSL). Cable-based-Hybrid Fibre Coax (HFC).
     R5. Is HFC transmission rate dedicated or shared among users? Are collisions possible in a 
     downstream HFC channel? Why or why not?
+    -- Shared. Yes. Because the whole street/ every user is sharing the same cable.
     R6. What access network technologies would be most suitable for providing internet access 
     in rural areas?
     R7. Dial-up modems and DSL both use the telephone line (a twisted-pair copper cable) as 
