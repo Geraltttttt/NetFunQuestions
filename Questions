@@ -2,51 +2,116 @@ Week 1. Review Questions
   SECTION 1.1 
     R1. What is the difference between a host and an end system? List several different types of 
     end systems. Is a Web server an end system?
-    -- A host is also called an end system. Examples: Phones, cars, servers. Yes.
+    -- There is no difference. Throughout this text, the words “host” and “end system” are used 
+       interchangeably. End systems include PCs, workstations, Web servers, mail servers, PDAs, 
+       Internet-connected game consoles, etc.
     R2. Describe the protocol that might be used by two people having a telephonic 
     conversation to initiate and end the conversation, i.e., the way that they talk.
+    -- Assume Alex wants to talk to Barbara. He enters Barbara’s number on his phone. She picks 
+       up the call and says “Hallo!?”. If it is the first time Alex talks to Barbara, he may want to 
+       make sure he reached the right person by asking “Is it Barbara speaking?”. Barbara replies 
+       “Yes, I am” and may ask who she is talking to. Alex introduces himself and then starts the 
+       actual conversation. After the conversation is over, Alex will say “bye” to Barbara and she 
+       will reply “Bye” too. This ends the conversation and both parties can hang up.
     R3. Why are standards important for protocols? 
+    -- Standards  are  important  for  protocols  so  that  people  can  create  networking  systems  and 
+       products that interoperate.
   SECTION 1.2
     R4. List four access technologies. Classify each one as home access, enterprise access, or 
     wide-area wireless access.
-    -- Digital Subscriber Line (DSL). Cable-based-Hybrid Fibre Coax (HFC). FTTH
+    -- 1. Dial-up modem over telephone line: home; 2. DSL over telephone line: home or small 
+       office; 3. Cable to HFC: home; 4. 100 Mbps switched Ethernet: enterprise.
     R5. Is HFC transmission rate dedicated or shared among users? Are collisions possible in a 
     downstream HFC channel? Why or why not?
-    -- Shared. Yes. Because the whole street/ every user is sharing the same cable.
+    -- Shared. On  the  downstream  channel, all packets emanate from a single source, namely, the head end. 
+       Thus, there are no collisions in the downstream channel.
     R6. What access network technologies would be most suitable for providing internet access 
     in rural areas?
-    -- DSL?
-    R7. Dial-up modems and DSL both use the telephone line (a twisted-pair copper cable) as 
-    their transmission medium. Why then is DSL much faster than dial-up access?
+    -- 3G and 4G or LTE can be used if the target area is covered by these cellular networks. DSL 
+       or Dial-up access might be used in case telephone lines are available. In both cases, Internet 
+       access is possible only if some infrastructure is reachable to the user in the rural area. If 
+       not, satellite links could be used.
+    R7. Dial-up modems and DSL both use the telephone line (a twisted-pair copper cable) as their transmission 
+    medium. Why then is DSL much faster than dial-up access?
+    -- A dial-up connection  goes  through  the  same  infrastructure of the telecommunication company that 
+       handles phone calls. As these calls are given a very low  bandwidth,  the achievable bitrate is also 
+       low (i.e., 56 Kbps). DSL, instead, only uses the telephone line from the customer’s home to the DSLAM, 
+       thus, it does not traverse the telecommunication company’s infrastructure that handles phone calls. 
+       Moreover, a DSL modem uses high-frequency tones which allow for higher bitrates (e.g., 24 Mbps). 
     R8. What are some of the physical media that Ethernet can run over? 
-    -- Twisted pair (TP), Coaxial fibre, Fibre optic cable.
-    R9. HFC, DSL, and FTTH are all used for residential access. For each of these access 
-    technologies, provide a range of transmission rates and comment on whether the transmission rate is shared or 
-    dedicated.
+    -- Today, Ethernet most commonly runs over twisted-pair copper wire. It also can run over fibers optic links.
+    R9. HFC, DSL, and FTTH are all used for residential access. For each of these access technologies, 
+    provide a range of transmission rates and comment on whether the transmission rate is shared or dedicated.
+    -- ADSL: up to 24 Mbps downstream and 2.5 Mbps upstream, bandwidth is dedicated. 
+       HFC: rates up to 42.8 Mbps and upstream rates of up to 30.7 Mbps; bandwidth is shared. 
+       FTTH: 2-10Mbps upload; 10-20 Mbps download; bandwidth is not shared.
     R10. Describe the different wireless technologies you use during the day and their 
     characteristics. If you have a choice between multiple technologies, why do you prefer one 
     over another?
+    -- You most likely have a smartphone (and/or a tablet) and a laptop. Both devices have a WiFi (802.11) 
+       interface capable of transmitting at 54 Mbps or more. The smartphone has 3G, 4G and (or) LTE interfaces 
+       to connect with the cellular network at 10 Mbps or more. The laptop may have a wired Ethernet interface 
+       supporting a rate of 1 Gbps. Whenever you are in reach of a WiFi access point, such as at your university 
+       or at home, you use WiFi with both the smartphone (as you can save battery as well as data from your 
+       cellular plan) and the laptop (as it is more practical). If you go to a gaming party, you may use wired 
+       Ethernet interface as it is faster and more efficient than WiFi when many users are connected at the 
+       same time.
   SECTION 1.3 
     R11. Suppose there is exactly one packet switch between a sending host and a receiving 
     host. The transmission rates between the sending host and the switch and between the 
     switch and the receiving host are R1 and R2, respectively. Assuming that the switch uses 
     store-and-forward packet switching, what is the total end-to-end delay to send a packet of 
     length L? (Ignore queuing, propagation delay, and processing delay.)
-    R12. What advantage does a circuit-switched network have over a packet-switched 
-    network? What advantages does TDM have over FDM in a circuit-switched network?
+    -- At time t0 the sending host begins to transmit. At time t1 = L/R1, the sending host completes 
+       transmission and the entire packet is received at the router (no propagation delay). Because 
+       the router has the entire packet at time t1, it can begin to transmit the packet to the receiving 
+       host at time t1. At time t2 = t1 + L/R2, the router completes transmission and the entire 
+       packet is received at the receiving host (again, no propagation delay). Thus, the end-to-end 
+       delay is L/R1 + L/R2.
+    R12. What advantage does a circuit-switched network have over a packet-switched network? 
+    What advantages does TDM have over FDM in a circuit-switched network?
+    -- A circuit-switched network can guarantee a certain amount of end-to-end bandwidth for 
+       the duration of a call. Most packet-switched networks today (including the Internet) cannot 
+       make any end-to-end guarantees for bandwidth. FDM requires sophisticated analog 
+       hardware to shift signal into appropriate frequency bands.
     R13. Suppose users share a 2 Mbps link. Also suppose each user transmits continuously at 1 
     Mbps when transmitting, but each user transmits only 20 percent of the time. (See the 
     discussion of statistical multiplexing in Section 1.3.) 
     a. When circuit switching is used, how many users can be supported? 
+    -- 2 users can be supported because each user requires half of the link bandwidth.
     b. For the remainder of this problem, suppose packet switching is used. Why will there 
     be essentially no queuing delay before the link if two or fewer users transmit at the 
     same time? Why will there be a queuing delay if three users transmit at the same 
     time?
-    c. Find the probability that a given user is transmitting. 
+    -- Since each user requires 1Mbps when transmitting, if two or fewer users transmit 
+       simultaneously, a maximum of 2Mbps will be required. Since the available bandwidth of the
+       shared link is 2Mbps, there will be no queuing delay before the link. Whereas, if three 
+       users transmit simultaneously, the bandwidth required will be 3Mbps which is more than 
+       the available bandwidth of the shared link. In this case, there will be queuing delay before the link.
+    c. Find the probability that a given user is transmitting.
+    -- Probability that a given user is transmitting = 0.2.
     d. Suppose now there are three users. Find the probability that at any given time, all 
     three users are transmitting simultaneously. Find the fraction of time during which 
     the queue grows.
+    -- Probability that all three users are transmitting simultaneously = (3)p^3(1-p)^(3-3)
+                                                                          (3)
+       = (0.2)3 = 0.008. Since the queue grows when all the users are transmitting, the fraction 
+       of time during which the queue grows (which is equal to the probability that all three users are 
+       transmitting simultaneously) is 0.008.
     R14. Why will two ISPs at the same level of the hierarchy often peer with each other? How 
     does an IXP earn money?
+    -- If the two ISPs do not peer with each other, then when they send traffic to each other they 
+       have to send the traffic through a provider ISP (intermediary), to which they have to pay 
+       for carrying the traffic. By peering with each other directly, the two ISPs can reduce their 
+       payments to their provider ISPs. An Internet Exchange Points (IXP) (typically in a standalone 
+       building with its own switches) is a meeting point where multiple ISPs can connect and/or peer 
+       together. An ISP earns its money by charging each of the ISPs that connect to the IXP a relatively 
+       small fee, which may depend on the amount of traffic sent to or received from the IXP.
     R15. Why is a content provider considered a different Internet entity today? How does a 
     content provider connect to other ISPs? Why?
+    -- A content provider (such as Google) does not really provide Internet connectivity to end 
+       users, even though it may have an extensive (and even global) network. Such a network is 
+       used for interconnecting its own data centers. However, a content provider cannot reach 
+       end users unless it becomes part of the Internet. The preferred way to do so is to peer with 
+       lower-tier ISPs, as this approach allows to save money and to streamline the quality of the 
+       offered services. 
